@@ -1,0 +1,79 @@
+{
+  "products": {
+    "title": "Products",
+    "list": [
+      {
+        "text": "Apple Ipad with Retina display Wifi - 32GB - White",
+        "link": true,
+        "price": "$499.00"
+      },
+      {
+        "text": "Apple Ipad with Retina display Wifi - 32GB - White",
+        "link": true,
+        "price": "$499.00"
+      }
+    ]
+  },
+  "shipping" :{
+    "title": "Shipping methods",
+    "text": "Fed ex",
+    "price": "$13.99"
+  },
+  "payMethod": "Payment method",
+  "tabs": {
+    "buttons": [
+      {
+        "text": "Credit Card"
+      },
+      {
+        "text": "Paypal"
+      },
+      {
+        "text": "Gift Card"
+      }
+    ],
+    "content": [
+      {
+        "important": true,
+        "form": {
+          "action": "/buy.html",
+          "placeholder": "Код проверки подлинности карты (или код CVC*) - это дополнительный код, нанесенный на вашу дебетовую или кредитную карту.Это последние три цифры числа, напечатанного в поле подписи на обратной стороне карты.",
+          "fields": [
+            {
+              "label": "Card Number",
+              "required": true,
+              "name": "numberCard",
+              "group": false
+            },
+            {
+              "label": "Valid thru (mm/yy)",
+              "required": true,
+              "month": "month",
+              "year": "year",
+              "group": true
+            },
+            {
+              "label": "Cardholders Name",
+              "required": true,
+              "name": "cardholder",
+              "group": false
+            }
+          ]
+        }
+      },
+      {
+        "important": false,
+        "text": "gift"
+      },
+      {
+        "important": false,
+        "text": "payment"
+      }
+    ]
+  },
+  "popup": {
+    "id": "popupAgreement",
+    "title": "Terms and Conditions",
+    "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>"
+  }
+}

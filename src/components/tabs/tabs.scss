@@ -1,0 +1,40 @@
+.tabs {
+  &__button-wrap {
+    margin-bottom: rem(20);
+    display: flex;
+  }
+
+  &__button {
+    flex-grow: 1;
+    color: $blue44;
+    padding: rem(10) rem(45);
+    border-radius: rem(5);
+    border: rem(1) solid $grayB;
+
+    &:active {
+      border: rem(1) solid $grayB;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:not(:last-of-type) {
+      margin-right: rem(20);
+    }
+
+    &_active {
+      background: $blue44;
+      border-color: $blue44;
+      color: $white;
+    }
+  }
+
+  &__content {
+    display: none;
+
+    &_active {
+      display: block;
+    }
+  }
+}

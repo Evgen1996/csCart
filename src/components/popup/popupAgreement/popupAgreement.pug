@@ -1,0 +1,8 @@
+mixin popupAgreement(data)
+  if data
+    .popupAgreement
+      .popupAgreement__content
+        if data.title
+          .popupAgreement__title= data.title
+        if data.text
+          div!=data.text

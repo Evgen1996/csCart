@@ -1,0 +1,7 @@
+mixin popup(id)
+  .popup(id=(id ? id : ''))
+    .popup__content-wrap
+      button.popup__close
+        svg
+          use(xlink:href="#close")
+      block

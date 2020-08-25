@@ -1,0 +1,12 @@
+.button {
+
+  &_active {
+    background: $blue44;
+  }
+
+  &_tab {
+    &:not(:last-child) {
+      margin-right: rem(15);
+    }
+  }
+}

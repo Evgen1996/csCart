@@ -1,0 +1,22 @@
+.input {
+  border: rem(1) solid $grayB;
+  width: 100%;
+  padding: rem(8);
+
+  &_checkout {
+    margin-top: rem(10);
+  }
+  
+  &_small {
+    width: 15%;
+  }
+
+  &_medium {
+    width: 35%;
+    display: block;
+  }
+
+  &_error {
+    border-color:red;
+  }
+}

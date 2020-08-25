@@ -1,0 +1,14 @@
+.popupAgreement {
+  background: $white;
+
+  &__content {
+    padding: rem(20);
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: rem(10);
+    font-size: rem(20);
+    font-weight: bold;
+  }
+}

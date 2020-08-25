@@ -1,0 +1,21 @@
+.list {
+  position: relative;
+
+  &__title {
+    font-size: rem(23);
+    margin-top: rem(20);
+    margin-bottom: rem(20);
+  }
+
+  &__items {
+    margin-bottom: rem(20);
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    &:not(:last-child) {
+      margin-bottom: rem(15);
+    }
+  }
+}
