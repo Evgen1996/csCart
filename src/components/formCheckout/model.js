@@ -22,10 +22,23 @@ export default class Model {
         });
       }
 
-      if (input.name === 'month' || input.name === 'year') {
+      if (input.name === 'month') {
         IMask(input,
           {
-            mask: /^[0-9]\d{0,1}$/
+            mask: IMask.MaskedRange,
+            from: 1,
+            to: 12
+          });
+      }
+
+      if (input.name === 'year') {
+
+        // маска для года, срок действия
+        IMask(input,
+          {
+            mask: IMask.MaskedRange,
+            from: 1,
+            to: 99
           });
       }
     });
@@ -35,7 +48,7 @@ export default class Model {
     allFields.forEach(input => {
       if (input.name === 'cvv') {
         if (input.value.length === 3) {
-          if(input.classList.contains('input_error')) {
+          if (input.classList.contains('input_error')) {
             input.classList.remove('input_error')
           }
           this.fieldsToFill[input.name] = input.value
@@ -48,7 +61,7 @@ export default class Model {
 
       if (input.name === 'cardholder') {
         if (input.value.length >= 3) {
-          if(input.classList.contains('input_error')) {
+          if (input.classList.contains('input_error')) {
             input.classList.remove('input_error')
           }
           this.fieldsToFill[input.name] = input.value
@@ -61,11 +74,10 @@ export default class Model {
 
       if (input.name === 'numberCard') {
         if (input.value.length === 19) {
-          if(input.classList.contains('input_error')) {
+          if (input.classList.contains('input_error')) {
             input.classList.remove('input_error')
           }
           this.fieldsToFill[input.name] = input.value
-
         }
         else {
           input.classList.add('input_error')
@@ -75,7 +87,7 @@ export default class Model {
 
       if (input.name === 'agreement') {
         if (input.checked === true) {
-          if(input.classList.contains('input_error')) {
+          if (input.classList.contains('input_error')) {
             input.classList.remove('formCheckout__agreement-checkbox_error')
           }
           this.fieldsToFill[input.name] = 1
@@ -88,7 +100,7 @@ export default class Model {
 
       if (input.name === 'year') {
         if (input.value.length === 2) {
-          if(input.classList.contains('input_error')) {
+          if (input.classList.contains('input_error')) {
             input.classList.remove('input_error')
           }
           this.fieldsToFill[input.name] = input.value
@@ -101,7 +113,7 @@ export default class Model {
 
       if (input.name === 'month') {
         if (input.value.length === 2) {
-          if(input.classList.contains('input_error')) {
+          if (input.classList.contains('input_error')) {
             input.classList.remove('input_error')
           }
           this.fieldsToFill[input.name] = input.value
@@ -114,15 +126,13 @@ export default class Model {
     });
     if (Object.keys(this.fieldsToFill).length === allFields.length) {
 
-
       // тут не успел чутка, поэтому не красиво вот вот :/
 
       let form = document.querySelector('.formCheckout');
-
-      form.textContent = 'ПОкупка успешно оплачена, аксиос не успел прикрутить :('
+      form.textContent = 'Покупка успешно оплачена!'
 
       // Axios.post(form.action, this.fieldsToFill).then(() => {
-        
+
       // });
     }
   }

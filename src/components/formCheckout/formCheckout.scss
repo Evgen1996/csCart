@@ -10,8 +10,8 @@
     position: absolute;
     background: $white;
     box-shadow: rem(2) rem(2) rem(11) rem(1);
-    left: 0;
-    top: rem(66);
+    left: rem(7);
+    top: rem(64);
     padding: rem(10);
     border-radius: rem(9);
 
@@ -55,20 +55,19 @@
       position: relative;
 
       span.formCheckout__btn-Tooltip {
-        content: "?";
         position: absolute;
-        left: rem(60);
-        bottom: rem(4);
+        left: rem(65);
         z-index: 20;
-        width: rem(25);
-        height: rem(25);
+        width: rem(22);
+        height: rem(22);
         text-align: center;
         background: $grayd8;
         border-radius: rem(15);
         line-height: rem(22);
         font-weight: bold;
+        font-size: rem(15);
         cursor: pointer;
-        top: rem(28);
+        top: rem(33.5);
         transition: background-color 0.4s ease;
 
         &:hover {
@@ -95,11 +94,11 @@
     &_required {
       position: relative;
       &:before {
-        position: absolute;
         content: "*";
         color: orangered;
-        right: rem(-12);
-        font-weight: bold;
+        margin-left: rem(3);
+        font-weight: 700;
+        font-size: rem(13);
       }
     }
   }
@@ -119,6 +118,7 @@
       position: relative;
       padding: 0;
       margin-left: rem(5);
+      color: $gray73;
 
       &::before {
         content: "";
@@ -137,15 +137,16 @@
     }
 
     &-checkbox {
-      width: rem(20);
-      height: rem(20);
-      vertical-align: top;
+      width: rem(19);
+      height: rem(19);
+      cursor: pointer;
+      vertical-align: sub;
       background-color: $white;
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;
       border-radius: rem(4);
-      border: 1px solid rgba(0, 0, 0, 0.25);
+      border: rem(1) solid rgba(0, 0, 0, 0.25);
       appearance: none;
       color-adjust: exact;
       margin-right: rem(5);
@@ -158,7 +159,7 @@
       }
       &_error {
         opacity: 1;
-        border-color: red;
+        border-color: $red;
       }
     }
   }

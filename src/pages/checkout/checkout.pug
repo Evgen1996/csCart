@@ -1,63 +1,68 @@
-include ../../components/button/button.pug
-include ../../components/formCheckout/formCheckout.pug
-include ../../components/popup/popup.pug
-include ../../components/popup/popupAgreement/popupAgreement.pug
+extends ../../layouts/main.pug
 
-- const checkout = require('../../data/checkout.json')
 
-if checkout
+block content
 
-  .container
-    h1.titlePage Checkout
+  include ../../components/button/button.pug
+  include ../../components/formCheckout/formCheckout.pug
+  include ../../components/popup/popup.pug
+  include ../../components/popup/popupAgreement/popupAgreement.pug
 
-    if checkout.products
-      .list
-        if checkout.products.title
-          .list__title= checkout.products.title
-        
-        if checkout.products.list
-          .list__items
-            each val in checkout.products.list
-              if val.text
-                .list__item
-                  if val.link === true 
-                    a.list__link(href='#')= val.text
-                  if val.price
-                    span.list__item-price= val.price
+  - const checkout = require('../../data/checkout.json')
 
-    if checkout.shipping
-      .list
-        if checkout.shipping.title
-          .list__title= checkout.shipping.title
-        if checkout.shipping.text
-          .list__item
-            span= checkout.shipping.text
-            span.list__item-price= checkout.shipping.price
-    
-    if checkout.payMethod
-      .list
-        .list__title=checkout.payMethod
+  if checkout
 
-    if checkout.tabs
-      nav.tabs
-        .tabs__button-wrap
-        
-          if checkout.tabs.buttons
-            each val,index in checkout.tabs.buttons
-              if val.text
-                +button(val.text, index === 0 ? 'tabs__button tabs__button_active' : 'tabs__button')
-        
-        if checkout.tabs.content
-          each val in checkout.tabs.content
-            if val.important
-              if val.important === true
-                .tabs__content.tabs__content_active
-                  +formCheckout(val.form)
-            else
-              .tabs__content= val.text ? val.text: 'empty'
+    .container
+      h1.titlePage Checkout
 
-  if checkout.popup
-    +popup(checkout.popup.id)
-      +popupAgreement(checkout.popup)
+      if checkout.products
+        .list
+          if checkout.products.title
+            .list__title= checkout.products.title
+          
+          if checkout.products.list
+            .list__items
+              each val in checkout.products.list
+                if val.text
+                  .list__item
+                    if val.link === true 
+                      a.list__link(href='#')= val.text
+                    if val.price
+                      span.list__item-price= val.price
+
+      if checkout.shipping
+        .list
+          if checkout.shipping.title
+            .list__title= checkout.shipping.title
+          if checkout.shipping.text
+            .list__item
+              span= checkout.shipping.text
+              span.list__item-price= checkout.shipping.price
+      
+      if checkout.payMethod
+        .list
+          .list__title=checkout.payMethod
+
+      if checkout.tabs
+        nav.tabs
+          .tabs__button-wrap
+          
+            if checkout.tabs.buttons
+              each val,index in checkout.tabs.buttons
+                if val.text
+                  +button(val.text, index === 0 ? 'tabs__button tabs__button_active' : 'tabs__button')
+          
+          if checkout.tabs.content
+            each val in checkout.tabs.content
+              if val.important
+                if val.important === true
+                  .tabs__content.tabs__content_active
+                    +formCheckout(val.form)
+              else
+                .tabs__content= val.text ? val.text: 'empty'
+
+    if checkout.popup
+      +popup(checkout.popup.id)
+        +popupAgreement(checkout.popup)
 
 

@@ -17,11 +17,11 @@ mixin formCheckout(form)
                       span.formCheckout__label_required
                     if field.group === true
                       div
-                        +input(null, 'input_small input_checkout' ,field.month)
+                        +input(null, 'input_small input_checkout', field.month)
                         span.formCheckout__line /
-                        +input(null, 'input_small input_checkout' ,field.year)
+                        +input(null, 'input_small input_checkout', field.year)
                     else
-                      +input(null,'input_checkout' ,field.name)
+                      +input(null,'input_checkout', field.name)
 
           .formCheckout__card
             .formCheckout__field.formCheckout__field_cvv
@@ -37,7 +37,7 @@ mixin formCheckout(form)
         .formCheckout__agreement
           label.formCheckout__agreement-content
             input.formCheckout__agreement-checkbox(type="checkbox", name="agreement")
-            span i accept the
+            span I accept the
             button.formCheckout__agreement-button(data-popup="#popupAgreement" type="button" data-inside="true") Terms and Conditionals
-        +button('Place order ( $624.99$ )', 'formCheckout__submit')
+        +button('Place order ( $624.99 )', 'formCheckout__submit')
 

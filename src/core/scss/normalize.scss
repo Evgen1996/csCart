@@ -26,6 +26,7 @@ body {
   font-family: 'Open Sans';
 }
 
+
 /**
  * Render the `main` element consistently in IE.
  */
@@ -168,6 +169,7 @@ img {
 
  input {
    outline: none;
+   box-sizing: border-box;
  }
 
 button {
